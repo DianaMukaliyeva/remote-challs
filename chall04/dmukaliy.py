@@ -8,9 +8,20 @@ def falling_sand(input_array):
     while y < length:
         x = 0
         while x < length:
-            if input_array[y][x] == '.' and y < length - 1 and input_array[y + 1][x] == ' ':
-                input_array[y + 1][x] = '.'
-                input_array[y][x] = ' '
+            if input_array[y][x] == '.' and y < length - 1:
+                if input_array[y + 1][x] == ' ':
+                    input_array[y + 1][x] = '.'
+                    input_array[y][x] = ' '
+                elif input_array[y + 1][x] == '.':
+                    y2 = y + 1
+                    while y2 < length:
+                        if input_array[y2][x] == ' ':
+                            input_array[y2][x] = '.'
+                            input_array[y][x] = ' '
+                            break
+                        elif input_array[y2][x] == '#':
+                            break
+                        y2 += 1
             x += 1
         y += 1
     for raw in input_array:
