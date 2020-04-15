@@ -30,7 +30,7 @@ def go_to(url, visited, counter, skip)
         puts "!!! Reach Philosophy !!!"
         exit
     end
-    if our_path.include? "Help:IPA/"
+    if our_path.include? "Help:" or our_path.include? "File:"
         go_to(url, visited, counter, skip + 1)
     end
     if !visited.include? our_path
