@@ -24,7 +24,7 @@ def go_to(url, visited, counter, skip)
         puts "no wikipedia page for this word!"
         exit
     end
-    content = file.read()
+    content = file.read
     our_path = get_path(content, skip)
     if our_path == "Philosophy"
         puts "!!! Reach Philosophy !!!"
